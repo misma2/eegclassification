@@ -61,11 +61,6 @@ NewEegData=np.zeros((len(EegData),MinLength))
 for a in range(len(EegData)):
 	NewEegData[a,:]=EegData[a][:MinLength]
 EegData=NewEegData
-print(len(EegData))
-print((EegData[1].shape[0]))
-print( y_data.shape)
-EegData=np.asarray(EegData[:])
-print(EegData.shape)
  
 x = tf.placeholder(tf.float32, shape=[len(EegData),EegData[0].shape[0]], name="x_holder")
 y = tf.placeholder(tf.int32, shape=y_data.shape[0], name="y_holder")
